@@ -34,13 +34,13 @@ public class Calculatrice {
         };
 
         // ---- VARIABLES POUR LES CALCULS ----
-        final double[] premierNombre = {0};
-        final String[] operation = {""};
-        final boolean[] nouvelleOperation = {true};
+        final double[] premierNombre = {0}; // utiliser un tableau pour la mutabilité dans le lambda
+        final String[] operation = {""}; 
+        final boolean[] nouvelleOperation = {true}; // indique si on commence une nouvelle opération
 
         // ---- CRÉATION DES BOUTONS ----
         for (String texte : boutons) {
-            JButton btn = new JButton(texte);
+            JButton btn = new JButton(texte); // création du bouton
             btn.setFont(new Font("Comic Sans MS", Font.BOLD, 22));
             btn.setFocusPainted(false);
 
@@ -57,7 +57,7 @@ public class Calculatrice {
             }
 
             // Effet au survol
-            btn.addMouseListener(new java.awt.event.MouseAdapter() {
+            btn.addMouseListener(new java.awt.event.MouseAdapter() { // Adapter pour les événements de la souris
                 public void mouseEntered(MouseEvent evt) {
                     btn.setBackground(btn.getBackground().darker());
                 }
@@ -91,13 +91,14 @@ public class Calculatrice {
 
                 // Égal
                 else if (valeur.equals("=")) {
-                    double second = Double.parseDouble(ecran.getText());
+                    double second = Double.parseDouble(ecran.getText()); // second nombre
                     double resultat = 0;
                     switch (operation[0]) {
                         case "+": resultat = premierNombre[0] + second; break;
                         case "-": resultat = premierNombre[0] - second; break;
                         case "×": resultat = premierNombre[0] * second; break;
-                        case "÷": resultat = second != 0 ? premierNombre[0] / second : 0; break;
+                        case "÷": resultat = second != 0 ? premierNombre[0] / second : 0; break; // éviter division par zéro
+                        default: resultat = second; break; // si aucune opération, afficher le nombre
                     }
                     ecran.setText(String.valueOf(resultat));
                     nouvelleOperation[0] = true;
