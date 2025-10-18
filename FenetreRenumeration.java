@@ -3,7 +3,7 @@ import java.awt.*;
 
 public class FenetreRenumeration extends JFrame {
 	public FenetreRenumeration() {
-		super("Renumération");
+		super("Renumération"); // Titre de la fenêtre
 		setSize(400, 200);
 		setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		setLayout(new BorderLayout());
