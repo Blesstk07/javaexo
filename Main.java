@@ -9,7 +9,7 @@ public class Main {
 
         // donner des valeurs aux attributs
         maVoiture.couleur = "Rouge";
-        maVoiture.modele = "Toyota";z
+    maVoiture.modele = "Toyota";
         maVoiture.annee = 2025;
 
         // utiliser les méthodes
@@ -22,17 +22,4 @@ public class Main {
     }
 }
 
-// Classe Voiture à l'extérieur de Main
-class Voiture {
-    String couleur;
-    String modele;
-    int annee;
-
-    public void demarrer() {
-        System.out.println("La voiture démarre !");
-    }
-
-    public void afficherInfos() {
-        System.out.println("Modèle : " + modele + ", Couleur : " + couleur + ", Année : " + annee);
-    }
-}
+// La classe Voiture est maintenant définie dans Voiture.java
