@@ -21,6 +21,9 @@ Tu pourras ensuite ajouter, modifier, supprimer ou lire des chaînes dans cette 
         // Modifier un élément
         noms.set(1, "Benoit"); // Remplace Bob par Benoit
 
+        // Ajouter un élément
+        noms.add(2,"Joseph");
+        
         // Supprimer un élément
         noms.remove("Alice"); // ou remove(0)
 

@@ -1,5 +1,5 @@
 /* créer une classe */
-public class Renumeration {
+public class renumeration {
    /* attributs prives */
    private int nombreHeures;
    private String grade;
@@ -29,7 +29,7 @@ public class Renumeration {
       return nombreHeures * tauxHoraire;
    }
 
-   public Renumeration(int nH, String gr) {
+   public  renumeration(int nH, String gr) {
       nombreHeures = nH;
       grade = gr;
       tauxHoraire = determinertaux();
