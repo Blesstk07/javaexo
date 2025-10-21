@@ -5,7 +5,7 @@ public class Voiture {
 
     // constructeur par défaut
     public Voiture() {
-        this.couleur = "Inconnue";
+        this.couleur = "Inconnue"; 
         this.modele = "Inconnu";
         this.annee = 0;
     }
