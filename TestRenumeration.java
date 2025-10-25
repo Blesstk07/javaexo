@@ -14,7 +14,7 @@ public class TestRenumeration extends JFrame {
         setSize(300, 200);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null); // Centre la fenêtre
-        setLayout(new GridLayout(4, 2, 5, 5)); // 4 lignes, 2 colonnes
+        setLayout(new GridLayout(4, 2, 5, 5)); // 4 lignes, 2 colonnes, espacement de 5px
 
         add(new JLabel("Nombre d'heures :"));
         txtHeures = new JTextField();
@@ -33,12 +33,14 @@ public class TestRenumeration extends JFrame {
         lblResultat = new JLabel("Résultat : ");
         add(lblResultat);
 
+// Action du bouton
+
         btnCalculer.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
                 int heures = Integer.parseInt(txtHeures.getText());
                 String grade = comboGrade.getSelectedItem().toString();
-                Renumeration r = new Renumeration(heures, grade);
-                lblResultat.setText("Résultat : " + r.calculerRem());
+                renumeration r = new renumeration(heures, grade);
+                lblResultat.setText("Résultat : " + r.calculerRem()); // Affiche le résultat
             }
         });
     }
