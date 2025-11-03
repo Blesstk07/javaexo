@@ -1,33 +1,54 @@
-# javaexo
+# javaexo# javaexo
 
-Ce dépôt contient plusieurs petits exercices Java.
+Collection d'exercices Java - configuration minimale pour Java 21Ce dépôt contient plusieurs petits exercices Java.
 
-## Mise à niveau Java
+## Prérequis## Mise à niveau Java
+
+- JDK 21 installé et actif (voir `java -version`).
 
 Ce projet peut être compilé avec un JDK standard. Si vous voulez forcer la compilation et l'exécution avec la dernière LTS (Java 21), suivez les étapes ci-dessous.
 
-Option A — SDKMAN (recommandé pour les développeurs):
+## Compilation (local, sans Maven)
 
-1. Installez SDKMAN si nécessaire:
+Depuis la racine du dépôt :Option A — SDKMAN (recommandé pour les développeurs):
 
-   curl -s "https://get.sdkman.io" | bash
+```bash1. Installez SDKMAN si nécessaire:
+
+# compiler toutes les sources valides vers target/classes
+
+javac -d target/classes -encoding UTF-8 --release 21 *.java   curl -s "https://get.sdkman.io" | bash
+
    source "$HOME/.sdkman/bin/sdkman-init.sh"
 
-2. Installez Java 21 et définissez-le par défaut:
+# créer un JAR exécutable (Main est le point d'entrée par défaut)
 
-   sdk install java 21-open
-   sdk default java 21-open
+jar cfe target/javaexo.jar Main -C target/classes .2. Installez Java 21 et définissez-le par défaut:
+
+
+
+# exécuter le JAR   sdk install java 21-open
+
+java -jar target/javaexo.jar   sdk default java 21-open
+
+```
 
 3. Vérifiez la version:
 
-   java -version
+## Notes
 
-Option B — paquet système (Debian/Ubuntu):
+- Certains fichiers malformés/doublons ont été déplacés dans le dossier `broken_files/` : regardez-les si vous voulez les corriger. java -version
 
-1. Installez OpenJDK 21 via apt (si disponible) :
+- Un fichier de synthèse `CHANGES_AND_COMMENTS.md` contient le détail des changements et commentaires par fichier.
 
-   sudo apt update
-   sudo apt install openjdk-21-jdk
+- Le projet n'utilise pas la structure standard Maven (`src/main/java`). Si vous préférez, je peux réorganiser le projet et rendre `mvn package` fonctionnel.Option B — paquet système (Debian/Ubuntu):
+
+## Si vous voulez un build Maven fonctionnel1. Installez OpenJDK 21 via apt (si disponible) :
+
+- Déplacer les sources dans `src/main/java` et `src/test/java`, puis relancer `mvn -U -e package`.
+
+- Si Maven échoue à cause du réseau (plugins non résolus), vous pouvez compiler localement avec `javac` comme ci-dessus. sudo apt update
+
+  sudo apt install openjdk-21-jdk
 
 2. Définissez JAVA_HOME dans votre shell:
 

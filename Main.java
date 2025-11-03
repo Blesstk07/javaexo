@@ -9,7 +9,7 @@ public class Main {
 
         // donner des valeurs aux attributs
         maVoiture.couleur = "Rouge";
-    maVoiture.modele = "Toyota";
+        maVoiture.modele = "Toyota";
         maVoiture.annee = 2025;
 
         // utiliser les méthodes
