@@ -6,7 +6,7 @@ public class Main {
 
         // création d’un objet
         Voiture maVoiture = new Voiture();
-
+        
         // donner des valeurs aux attributs
         maVoiture.couleur = "Rouge";
         maVoiture.modele = "Toyota";

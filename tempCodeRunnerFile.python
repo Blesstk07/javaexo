@@ -1,0 +1,2 @@
+import numpy as np 
+print("C'est fait")
